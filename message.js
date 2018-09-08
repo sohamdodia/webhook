@@ -1,0 +1,1 @@
+exports.companyNotFound = 'Company not found with this id.';

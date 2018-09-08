@@ -47,117 +47,12 @@
         ]
       }
     },
-    "/portfolio/holdings": {
+    "/company/fields/{id}": {
       "get": {
         "tags": [
-          "Portfolio"
+          "Webhook"
         ],
-        "summary": "Fetch holdings",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-        ]
-      }
-    },
-    "/portfolio/returns": {
-      "get": {
-        "tags": [
-          "Portfolio"
-        ],
-        "summary": "Fetch returns",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-        ]
-      }
-    },
-    "/portfolio/stock": {
-      "get": {
-        "tags": [
-          "Portfolio"
-        ],
-        "summary": "Fetch all Stocks",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-        ]
-      },
-      "post": {
-        "tags": [
-          "Portfolio"
-        ],
-        "summary": "Create new stock",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "title",
-            "in": "formData",
-            "description": "Title of note",
-            "type": "string",
-            "required": true
-          }
-        ]
-      }
-    },
-    "/portfolio/trade": {
-      "post": {
-        "tags": [
-          "Portfolio"
-        ],
-        "summary": "Create new trade",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "stockId",
-            "in": "formData",
-            "description": "Stock Id",
-            "type": "string",
-            "required": true
-          },
-          {
-            "name": "type",
-            "in": "formData",
-            "description": "Type [buy, sell]",
-            "type": "string",
-            "required": true
-          },
-          {
-            "name": "price",
-            "in": "formData",
-            "description": "Price",
-            "type": "number",
-            "required": true
-          },
-          {
-            "name": "quantity",
-            "in": "formData",
-            "description": "Quantity",
-            "type": "number",
-            "required": true
-          },
-          {
-            "name": "date",
-            "in": "formData",
-            "description": "Unix Timestamp",
-            "type": "number",
-            "required": true
-          }
-        ]
-      }
-    },
-    "/portfolio/trade/{id}": {
-      "put": {
-        "tags": [
-          "Portfolio"
-        ],
-        "summary": "Update trade",
+        "summary": "Create Field",
         "produces": [
           "application/json"
         ],
@@ -165,56 +60,35 @@
           {
             "name": "id",
             "in": "path",
-            "description": "Note id",
+            "description": "Company Id",
             "type": "string",
             "required": true
-          },
-          {
-            "name": "stockId",
-            "in": "formData",
-            "description": "Stock Id",
-            "type": "string"
-          },
-          {
-            "name": "type",
-            "in": "formData",
-            "description": "Type [buy, sell]",
-            "type": "string"
-          },
-          {
-            "name": "price",
-            "in": "formData",
-            "description": "Price",
-            "type": "number"
-          },
-          {
-            "name": "quantity",
-            "in": "formData",
-            "description": "Quantity",
-            "type": "number"
-          },
-          {
-            "name": "date",
-            "in": "formData",
-            "description": "Unix Timestamp",
-            "type": "number"
           }
         ]
-      },
-      "delete": {
+      }
+    },
+    "/company/fields": {
+      "post": {
         "tags": [
-          "Portfolio"
+          "Webhook"
         ],
-        "summary": "Delete trade",
+        "summary": "Create or update fields of a particular company",
         "produces": [
           "application/json"
         ],
         "parameters": [
           {
-            "name": "id",
-            "in": "path",
-            "description": "Note id",
+            "name": "companyId",
+            "in": "formData",
+            "description": "Company Id",
             "type": "string",
+            "required": true
+          },
+          {
+            "name": "fields",
+            "in": "formData",
+            "description": "Fields [name, number, alternate number, total items, total cost]",
+            "type": "array",
             "required": true
           }
         ]
