@@ -94,6 +94,61 @@
         ]
       }
     },
+    "/company/rule": {
+      "post": {
+        "tags": [
+          "Webhook"
+        ],
+        "summary": "Create rule",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "formData",
+            "description": "Company Id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "operatorId",
+            "in": "formData",
+            "description": "Operator Id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "value",
+            "in": "formData",
+            "description": "Value [100, 500]",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "field",
+            "in": "formData",
+            "description": "Field on which user want to apply filter",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "phoneNumberField",
+            "in": "formData",
+            "description": "Field which will give user phone number",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "smsBody",
+            "in": "formData",
+            "description": "SMS Body",
+            "type": "string",
+            "required": true
+          }
+        ]
+      }
+    },
     "/operator": {
       "get": {
         "tags": [

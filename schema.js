@@ -67,3 +67,72 @@ exports.createOperator = Joi.object({
           })
           .label('Name')
 });
+
+exports.createRule = Joi.object({
+  companyId: Joi
+              .string()
+              .required()
+              .options({
+                language: {
+                  any: {
+                    empty: 'is required'
+                  }
+                }
+              })
+              .label('Company Id'),
+  operatorId: Joi
+                .string()
+                .required()
+                .options({
+                  language: {
+                    any: {
+                      empty: 'is required'
+                    }
+                  }
+                })
+                .label('Operator Id'),
+  value: Joi
+          .string()
+          .required()
+          .options({
+            language: {
+              any: {
+                empty: 'is required'
+              }
+            }
+          })
+          .label('Value'),
+  field: Joi
+          .string()
+          .required()
+          .options({
+            language: {
+              any: {
+                empty: 'is required'
+              }
+            }
+          })
+          .label('Field'),
+  phoneNumberField: Joi
+                      .string()
+                      .required()
+                      .options({
+                        language: {
+                          any: {
+                            empty: 'is required'
+                          }
+                        }
+                      })
+                      .label('Phone Number Field'),
+  smsBody: Joi
+            .string()
+            .required()
+            .options({
+              language: {
+                any: {
+                  empty: 'is required'
+                }
+              }
+            })
+            .label('SMs Body')
+});
