@@ -17,6 +17,8 @@
     "glob": "^7.1.3",
     "joi": "^13.6.0",
     "lodash": "^4.17.10",
-    "mongoose": "^5.2.13"
+    "mongoose": "^5.2.13",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
   }
 }

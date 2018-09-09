@@ -65,7 +65,18 @@ exports.createOperator = Joi.object({
               }
             }
           })
-          .label('Name')
+          .label('Name'),
+  fn: Joi
+        .string()
+        .required()
+        .options({
+          language: {
+            any: {
+              empty: 'is required'
+            }
+          }
+        })
+        .label('Function')
 });
 
 exports.createRule = Joi.object({

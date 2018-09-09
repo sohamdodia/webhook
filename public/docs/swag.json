@@ -176,7 +176,61 @@
             "description": "Operator Name",
             "type": "string",
             "required": true
+          },
+          {
+            "name": "fn",
+            "in": "formData",
+            "description": "Operator Logic",
+            "type": "string",
+            "required": true
           }
+        ]
+      }
+    },
+    "/webhook": {
+      "post": {
+        "tags": [
+          "Webhook"
+        ],
+        "summary": "Call webhook API",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "formData",
+            "description": "Name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "number",
+            "in": "formData",
+            "description": "Phone Number",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "total cost",
+            "in": "formData",
+            "description": "Total cost",
+            "type": "string",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/report": {
+      "get": {
+        "tags": [
+          "Webhook"
+        ],
+        "summary": "Report",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
         ]
       }
     }

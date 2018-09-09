@@ -7,6 +7,9 @@ const { Schema } = mongoose;
 const OperatorSchema = new Schema({
   name: {
     type: 'string'
+  },
+  fn: {
+    type: 'string'
   }
 });
 
