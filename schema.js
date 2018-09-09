@@ -53,3 +53,17 @@ exports.createOrUpdateFields = Joi.object({
             })
             .label('Fields')
 });
+
+exports.createOperator = Joi.object({
+  name: Joi
+          .string()
+          .required()
+          .options({
+            language: {
+              any: {
+                empty: 'is required'
+              }
+            }
+          })
+          .label('Name')
+});

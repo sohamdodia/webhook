@@ -93,6 +93,37 @@
           }
         ]
       }
+    },
+    "/operator": {
+      "get": {
+        "tags": [
+          "Webhook"
+        ],
+        "summary": "Fetch Operators",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+        ]
+      },
+      "post": {
+        "tags": [
+          "Webhook"
+        ],
+        "summary": "Create Operator",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "formData",
+            "description": "Operator Name",
+            "type": "string",
+            "required": true
+          }
+        ]
+      }
     }
   }
 }
